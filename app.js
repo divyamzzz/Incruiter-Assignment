@@ -1,4 +1,4 @@
-require("dotenv").config();
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const bcrypt = require("bcrypt");
@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(cookieParser());
 
-const SECRET_KEY = process.env.JWT_SECRET || "your_secret_key";
+const SECRET_KEY = "your_secret_key";
 
 mongoose.connect("mongodb://localhost:27017/incruiter", { useNewUrlParser: true, useUnifiedTopology: true });
 
