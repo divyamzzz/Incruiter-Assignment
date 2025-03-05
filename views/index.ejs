@@ -1,0 +1,37 @@
+<%- include('partials/header') %>
+
+<div class="main">
+  <div class="col-lg-6">
+    <div class="login">
+      <form method="post" action="/login">
+        <h1 class="ex2">LOGIN</h1>
+
+        <input type="text" class="ex1" name="username" required>
+        <label>Username</label>
+        <br>
+
+        <input type="password" class="ex1" name="password" required>
+        <label>Password</label>
+        <br>
+
+        <div style="padding: 10px 0 0 10px;">
+          <button type="submit">Submit</button> 
+        </div>  
+        <a href="/signup">New User? Click Here</a>
+        <br>
+        <a href="/reset-password">Forgot Password? Click Here</a>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  var errorMessage = "<%= typeof error !== 'undefined' ? error : '' %>";
+  if (errorMessage.trim() !== "") {
+    alert(errorMessage);
+  }
+</script>
+
+<%- include('partials/footer') %>

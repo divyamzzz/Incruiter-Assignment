@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+
+.font{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4rem;
+    line-height: 1.5;
+    color: beige;
+}
+.container{
+    padding-top: 2rem;
+}
+.container2{
+    line-height: 4;
+}
+.font1{
+    font-family: 'Ubuntu', sans-serif;
+}
+.dbutton{
+    margin: 5% 3% 5% 0;
+}
+.h3size{
+    font-size: 2rem;
+}
+.h3size1{
+    margin-right: 35px;
+    font-family: 'Sacramento', cursive;
+    font-size: 4rem;
+}
+.h2size{
+    font-size: 3rem;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bolder;
+}
+.login1{
+    margin-top: 130px;
+    margin-bottom: 50px;
+}
+.login{
+    margin-top: 130px;
+    margin-left: 200px;
+}
+.ex1{
+    margin: 10px;
+}
+.align{
+  padding: 0 500px;   
+}
+.signup
+{
+    margin: 100px 0 100px 200px;
+}
+.filter{
+    min-height: 550px;
+    max-width: 15%;
+    background-color: black;
+    color: beige;
+}

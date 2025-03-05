@@ -1,0 +1,63 @@
+<%- include('partials/header') %>
+
+<div class="middle1">
+  <div class="row">
+    <div class="col-lg-6">
+      <form method="post" action="/signup" onsubmit="return validateForm()">
+        <div class="signup">
+          <h1>SIGN UP</h1>
+
+          <input type="text" class="ex1" name="uname" autocomplete="off" required>
+          <label>Name</label>
+          <br>
+
+          <input type="email" class="ex1" name="email" autocomplete="off" required>
+          <label>Email</label>
+          <br>
+
+          <input type="text" class="ex1" name="gender" autocomplete="off" required>
+          <label>Gender</label>
+          <br>
+
+          <input type="text" class="ex1" name="username" autocomplete="off" required>
+          <label>Username</label>
+          <br>
+
+          <input type="password" class="ex1" name="password" id="password" autocomplete="off" required>
+          <label>Password</label>
+          <br>
+
+          <input type="password" class="ex1" name="confpassword" id="confpassword" autocomplete="off" required>
+          <label>Confirm Password</label>
+          <br>
+
+          <div style="padding: 10px 0 0 10px;">
+            <button type="submit">Submit</button>
+          </div>  
+        </div>
+      </form>
+    </div>
+  </div> 
+</div>       
+
+
+<script>
+  function validateForm() {
+    var password = document.getElementById("password").value;
+    var confPassword = document.getElementById("confpassword").value;
+
+    if (password !== confPassword) {
+      alert("Passwords do not match!");
+      return false; 
+    }
+    return true;
+  }
+
+ 
+  var errorMessage = "<%= typeof error !== 'undefined' ? error : '' %>";
+  if (errorMessage.trim() !== "") {
+    alert(errorMessage);
+  }
+</script>
+
+<%- include('partials/footer') %>

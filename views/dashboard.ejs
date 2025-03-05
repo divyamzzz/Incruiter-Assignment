@@ -1,0 +1,27 @@
+<%- include('partials/header') %>
+
+<div class="details">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="info">
+        <h1 style="margin-bottom: 10px;">USER DETAILS</h1>      
+        <ul type="none">
+          <% udetails.forEach(function(User) { %>
+            <li><h4>Name: <%= User.name %></h4></li>
+            <li><h4>Email: <%= User.email %></h4></li>
+            <li><h4>Gender: <%= User.gender %></h4></li>
+            <li><h4>Username: <%= User.username %></h4></li>
+          <% }) %>
+        </ul>
+        <br>
+        <a href="/logout">
+          <div style="padding: 10px 0 0 10px;">
+            <button type="submit">Logout</button> 
+          </div>  
+        </a>
+      </div>  
+    </div>
+  </div>  
+</div>
+
+<%- include('partials/footer') %>
