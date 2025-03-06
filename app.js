@@ -120,26 +120,32 @@ app.get("/reset-password", (req, res) => {
 
 app.post("/reset-password", async (req, res) => {
     try {
-        const { username, oldpassword, newpassword, confpassword } = req.body;
+        const { username, oldPassword, newPassword, confirmPassword } = req.body;
+
         const user = await User.findOne({ username });
         if (!user) {
             return res.send("<script>alert('No user found!'); window.location='/reset-password';</script>");
         }
-        const isMatch = await bcrypt.compare(oldpassword, user.password);
+
+        const isMatch = await bcrypt.compare(oldPassword, user.password);
         if (!isMatch) {
             return res.send("<script>alert('Old password is incorrect!'); window.location='/reset-password';</script>");
         }
-        if (newpassword !== confpassword) {
+
+        if (newPassword !== confirmPassword) {
             return res.send("<script>alert('New passwords do not match!'); window.location='/reset-password';</script>");
         }
-        const hashedNewPassword = await bcrypt.hash(newpassword, 10);
-        user.password = hashedNewPassword;
+
+        user.password = await bcrypt.hash(newPassword, 10);
         await user.save();
+
         res.send("<script>alert('Password reset successful! Please log in.'); window.location='/';</script>");
     } catch (error) {
         res.status(500).send("Server Error");
     }
 });
+
+
 
 app.listen(3000, () => {
     console.log("Server started on port 3000");
